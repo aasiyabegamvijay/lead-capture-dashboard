@@ -1,38 +1,45 @@
-Lead Capture Dashboard with Webhook Integration
+Lead Capture Dashboard (MERN)
 
-A full-stack MERN web application for capturing leads and triggering automation workflows using webhooks.
-Built as part of the MERN / Automation Developer Screening Assignment.
+A full-stack Lead Capture web application built with the MERN stack that collects leads, displays them in a dashboard, and triggers a webhook automation when a new lead is created.
 
 📌 Features
+✅ Frontend
 
-✅ Lead capture form with validation
+Lead Capture Form with validation
 
-✅ Lead dashboard with search & filtering
+Lead List Dashboard (table view)
 
-✅ Lead detail view page
+Lead Detail Page
 
-✅ Webhook trigger on lead creation
+Responsive design (mobile + desktop)
 
-✅ Webhook success/failure tracking
+Loading states & error handling
 
-✅ Modern UI with dark mode toggle
+Search functionality
 
-✅ Responsive design (Mobile + Desktop)
+Dark mode toggle
 
-✅ Error handling & loading states
+✅ Backend
 
-✅ Clean API architecture
+REST API with Express
+
+MongoDB database (Atlas)
+
+Webhook trigger on lead creation
+
+Webhook success/failure tracking
 
 🛠 Tech Stack
+
 Frontend
 
-React (Vite)
+React
 
-React Router DOM
+React Router
 
 Axios
 
-Custom CSS (Modern UI + Dark Mode)
+CSS (Custom)
 
 Backend
 
@@ -42,46 +49,11 @@ Express.js
 
 MongoDB (Mongoose)
 
-Axios (Webhook calls)
-
-dotenv
-
-Tools
-
-MongoDB Atlas
-
-Webhook.site (Webhook testing)
-
-GitHub
-
-📁 Project Structure
-lead-capture-dashboard/
-│
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   ├── config/
-│   ├── server.js
-│   └── package.json
-│
-├── lead-dashboard/
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── utils/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── public/
-│   └── package.json
-│
-├── README.md
-└── .gitignore
+Axios (Webhook trigger)
 
 ⚙️ Setup Instructions
 1️⃣ Clone Repository
-git clone https://github.com/aasiyabegamvijay/lead-capture-dashboard
+git clone https://github.com/aasiyabegamvijay/lead-capture-dashboard.git
 cd lead-capture-dashboard
 
 2️⃣ Backend Setup
@@ -89,49 +61,38 @@ cd backend
 npm install
 
 
-Create a .env file inside backend/:
+Create .env file inside backend:
 
 PORT=5000
-MONGO_URI=mongodb+srv://admin:K5t7cVJ52VpJd2Lw@cakedb.p50hzai.mongodb.net/leadDashboardDB?retryWrites=true&w=majority
-WEBHOOK_URL=https://webhook.site/d284ea1b-23ac-4aec-8e15-bf329025a6d9
+MONGO_URI=your_mongodb_connection_string
+WEBHOOK_URL=https://webhook.site/your-test-id
 
 
-
-Start backend:
+Run backend:
 
 npm start
 
-
-Server runs at:
-
-http://localhost:5000
-
 3️⃣ Frontend Setup
-cd ../lead-dashboard
+cd frontend
 npm install
 npm run dev
 
-
-Frontend runs at:
-
-http://localhost:5173
-
-🔌 API Endpoints
+🔗 API Endpoints
 Method	Endpoint	Description
 POST	/api/leads	Create new lead
 GET	/api/leads	Get all leads
 GET	/api/leads/:id	Get single lead
+🔔 Webhook Integration
 
-🔗 Webhook Integration Explanation
+When a lead is successfully created:
 
-When a new lead is created:
+Backend sends lead data to a webhook URL
 
-Lead data is saved to MongoDB.
+Webhook response is handled
 
-Backend sends a POST request to the webhook URL.
+Lead record stores webhook status (success, failed, pending)
 
-Payload format:
-
+Payload Format:
 {
   "name": "John Doe",
   "email": "john@mail.com",
@@ -139,49 +100,22 @@ Payload format:
   "created_at": "2026-02-11T10:00:00"
 }
 
+🧪 Bonus Features Implemented
 
-If webhook succeeds → webhook_status = "success"
+Search/filter leads
 
-If webhook fails → webhook_status = "failed"
+Dark mode toggle
 
-Status is stored in database and shown in UI.
+Status badges
 
-🎯 UI Screens
+Reusable components
 
-Lead Creation Form
+Professional UI animations
 
-Lead Dashboard Table
-
-Lead Detail View
-
-Dark Mode Toggle
-
-Loading & Error States
-
-✅ Assignment Requirements Coverage
-Requirement	Status
-Lead Form	✅
-Lead List Page	✅
-Lead Detail View	✅
-Responsive UI	✅
-Validation	✅
-Webhook Integration	✅
-Error Handling	✅
-Loading States	✅
-Search / Filter	✅
-Dark Mode	✅
-📦 Future Enhancements (Optional)
-
-Analytics chart (Leads per source)
-
-Pagination
-
-Authentication
-
-Admin dashboard
-
-👨‍💻 Author
+👩‍💻 Author
 
 Aasiya Begam S
-MERN Stack Developer
-GitHub: https://github.com/aasiyabegamvijay
+
+📜 License
+
+This project is for educational and screening purposes.
