@@ -80,13 +80,11 @@ Search/filter leads
 Dark mode toggle
 Status badges
 Reusable components
-
 Professional UI animations
 
 👩‍💻 Author
-
 Aasiya Begam S
+MERN stack developer
 
 📜 License
-
 This project is for educational and screening purposes.
