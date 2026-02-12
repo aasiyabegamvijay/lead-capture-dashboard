@@ -1,90 +1,158 @@
-Lead Capture Dashboard (MERN)
+Lead Capture Dashboard (MERN Stack + Webhook Automation)
 
-A full-stack Lead Capture web application built with the MERN stack that collects leads, displays them in a dashboard, and triggers a webhook automation when a new lead is created.
+A full-stack Lead Capture web application built using the MERN stack. Users can submit leads through a form, view all leads in a dashboard, view individual lead details, and trigger a webhook automation when a new lead is created.
 
-📌 Features
+This project was built as part of a **MERN / Automation Developer Screening Assignment**.
 
-✅ Frontend
-Lead Capture Form with validation
-Lead List Dashboard (table view)
-Lead Detail Page
-Responsive design (mobile + desktop)
-Loading states & error handling
-Search functionality
-Dark mode toggle
+---
 
-✅ Backend
-REST API with Express
-MongoDB database (Atlas)
-Webhook trigger on lead creation
-Webhook success/failure tracking
+# Features
 
-🛠 Tech Stack
-Frontend
-React
-React Router
-Axios
-CSS (Custom)
-Backend
-Node.js
-Express.js
-MongoDB (Mongoose)
-Axios (Webhook trigger)
+## Lead Capture
+- Form with validation
+- Required fields: Name, Email
+- Source dropdown selection
 
-⚙️ Setup Instructions
-1️⃣ Clone Repository
+## Lead Management
+- Lead List Dashboard
+- Lead Detail View
+- Search filter
+
+## Automation
+- Webhook triggered on lead creation
+- Webhook success and failure handling
+- Webhook status stored and displayed
+
+## UI / UX
+- Responsive design (Mobile + Desktop)
+- Clean professional layout
+- Dark mode toggle
+- Loading and error states
+- Smooth animations
+
+---
+
+# Tech Stack
+
+## Frontend
+- React (Vite)
+- React Router DOM
+- Axios
+- CSS (Custom modern UI)
+
+## Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- Axios (Webhook trigger)
+
+## Tools
+- MongoDB Atlas
+- Webhook.site
+- Git & GitHub
+
+---
+
+# Project Structure
+
+lead-capture-dashboard/
+├── client/
+│ └── src/
+├── server/
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── services/
+│ ├── config/
+│ └── server.js
+├── .env.example
+└── README.md
+
+
+---
+
+# Setup Instructions
+
+## Step 1 — Clone Repository
+
+```bash
 git clone https://github.com/aasiyabegamvijay/lead-capture-dashboard.git
 cd lead-capture-dashboard
-
-2️⃣ Backend Setup
-cd backend
+Step 2 — Backend
+cd server
 npm install
+Create .env file inside the server/ folder:
 
-
-Create .env file inside backend:
-PORT=5000
 MONGO_URI=your_mongodb_connection_string
 WEBHOOK_URL=https://webhook.site/your-test-id
+PORT=5000
+Start backend:
 
+npm run dev
+Step 3 — Frontend
+Open a new terminal:
 
-Run backend:
-npm start
-
-3️⃣ Frontend Setup
-cd frontend
+cd client
 npm install
 npm run dev
+API Endpoints
+Create Lead
+POST /api/leads
 
-🔗 API Endpoints
-Method	Endpoint	Description
-POST	/api/leads	Create new lead
-GET	/api/leads	Get all leads
-GET	/api/leads/:id	Get single lead
-🔔 Webhook Integration
+Get All Leads
+GET /api/leads
 
-When a lead is successfully created:
-Backend sends lead data to a webhook URL
-Webhook response is handled
-Lead record stores webhook status (success, failed, pending)
+Get Single Lead
+GET /api/leads/:id
 
-Payload Format:
+Webhook Integration
+Webhook Trigger
+When a new lead is created, the backend sends a POST request to the webhook URL configured in .env.
+
+Payload Format
 {
   "name": "John Doe",
   "email": "john@mail.com",
   "source": "Website",
   "created_at": "2026-02-11T10:00:00"
 }
+Webhook Flow
+Lead saved to MongoDB
 
-🧪 Bonus Features Implemented
-Search/filter leads
+Webhook triggered
+
+If success → webhook_status = success
+
+If failed → webhook_status = failed
+
+Status shown in UI
+
+Bonus Features
+
+Search filter in dashboard
+
 Dark mode toggle
-Status badges
-Reusable components
-Professional UI animations
 
-👩‍💻 Author
-Aasiya Begam S
-MERN stack developer
+Webhook status badges
 
-📜 License
-This project is for educational and screening purposes.
+Reusable component structure
+
+Animated UI transitions
+
+Validation & Error Handling
+Required field validation
+
+Email format validation
+
+Loading indicators
+
+Webhook failure handling
+
+Friendly error messages
+
+Author
+Aasiya Begam Vijay
+https://github.com/aasiyabegamvijay
+
+License
+This project is for assessment and learning purposes.
