@@ -2,8 +2,6 @@ Lead Capture Dashboard (MERN Stack + Webhook Automation)
 
 A full-stack Lead Capture web application built using the MERN stack. Users can submit leads through a form, view all leads in a dashboard, view individual lead details, and trigger a webhook automation when a new lead is created.
 
-This project was built as part of a **MERN / Automation Developer Screening Assignment**.
-
 ---
 
 # Features
