@@ -40,5 +40,5 @@ A full-stack MERN web application for capturing leads and triggering automation 
 
 ### 1️ Clone Repository
 ```bash
-git clone https://github.com/your-username/lead-capture-dashboard.git
+git clone https://github.com/aasiyabegamvijay/lead-capture-dashboard
 cd lead-capture-dashboard
